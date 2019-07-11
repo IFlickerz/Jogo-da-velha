@@ -79,7 +79,25 @@ $(document).ready( function(){
 	}
 
 	function verifica_combinacao(){
-
+		//verifica se empatou
+		if(
+			matriz_jogo['a'][1] != 0 &&
+			matriz_jogo['a'][2] != 0 &&
+			matriz_jogo['a'][3] != 0 &&
+			
+			matriz_jogo['b'][1] != 0 &&
+			matriz_jogo['b'][2] != 0 &&
+			matriz_jogo['b'][3] != 0 &&
+			
+			matriz_jogo['c'][1] != 0 &&
+			matriz_jogo['c'][2] != 0 &&
+			matriz_jogo['c'][3] != 0
+		){
+			alert('Empate!')
+			$('.jogada').off()
+			window.location = 'index.html'
+		}
+		
 		//verifica na horizontal
 		let pontos = 0
 		for(let i = 1; i <= 3; i++){
