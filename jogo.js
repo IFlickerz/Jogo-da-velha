@@ -79,24 +79,6 @@ $(document).ready( function(){
 	}
 
 	function verifica_combinacao(){
-		//verifica se empatou
-		if(
-			matriz_jogo['a'][1] != 0 &&
-			matriz_jogo['a'][2] != 0 &&
-			matriz_jogo['a'][3] != 0 &&
-			
-			matriz_jogo['b'][1] != 0 &&
-			matriz_jogo['b'][2] != 0 &&
-			matriz_jogo['b'][3] != 0 &&
-			
-			matriz_jogo['c'][1] != 0 &&
-			matriz_jogo['c'][2] != 0 &&
-			matriz_jogo['c'][3] != 0
-		){
-			alert('Empate!')
-			$('.jogada').off()
-			window.location = 'index.html'
-		}
 		
 		//verifica na horizontal
 		let pontos = 0
@@ -135,7 +117,26 @@ $(document).ready( function(){
 		pontos = 0
 		pontos = matriz_jogo['a'][3] + matriz_jogo['b'][2] + matriz_jogo['c'][1]
 		ganhador(pontos)
-
+		
+		//verifica se empatou
+		if(
+			matriz_jogo['a'][1] != 0 &&
+			matriz_jogo['a'][2] != 0 &&
+			matriz_jogo['a'][3] != 0 &&
+			
+			matriz_jogo['b'][1] != 0 &&
+			matriz_jogo['b'][2] != 0 &&
+			matriz_jogo['b'][3] != 0 &&
+			
+			matriz_jogo['c'][1] != 0 &&
+			matriz_jogo['c'][2] != 0 &&
+			matriz_jogo['c'][3] != 0
+		){
+			alert('Empate!')
+			$('.jogada').off()
+			window.location = 'index.html'
+		}
+		
 	}
 
 	function ganhador(pontos){
